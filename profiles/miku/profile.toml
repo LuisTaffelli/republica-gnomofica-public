@@ -1,0 +1,5 @@
+name = "miku"
+human_display_name = "Visitante"
+identity = "identity.md"
+prompt = "prompt.md"
+documents = []

@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light">
+  <meta name="theme-color" content="#f5f6f0">
+  <title>Miku · República Gnomófica</title>
+  <link rel="stylesheet" href="/static/app.css">
+  <script src="/static/app.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#message-input">Ir al mensaje</a>
+  <div class="app-shell">
+    <aside id="sidebar" class="sidebar" aria-label="Conversaciones">
+      <a class="brand" href="/" aria-label="Miku, inicio">
+        <span class="brand-mark" aria-hidden="true">m.</span>
+        <span><strong>Miku</strong><small>REPÚBLICA GNOMÓFICA</small></span>
+      </a>
+      <button id="new-session" class="button primary new-session" type="button" disabled><span aria-hidden="true">＋</span> Nueva conversación</button>
+      <div class="list-heading"><h2>Tu historial</h2><button id="refresh-sessions" class="text-button" type="button" disabled>Actualizar</button></div>
+      <nav id="session-list" class="session-list" aria-label="Elegir conversación"><p class="list-empty">Cargando conversaciones…</p></nav>
+      <div class="sidebar-foot"><span class="little-spark" aria-hidden="true">✳</span><p>Un lugar para seguir<br>lo que te da curiosidad.</p></div>
+    </aside>
+
+    <main class="workspace">
+      <header class="workspace-header">
+        <button id="toggle-sidebar" class="button mobile-menu" type="button" aria-controls="sidebar" aria-expanded="false">Historial</button>
+        <div class="session-heading"><p class="eyebrow">TU ESPACIO CON MIKU</p><h1 id="session-title">Conversemos</h1><p id="session-subtitle" class="session-subtitle">Tus ideas pueden empezar por acá.</p></div>
+        <button id="close-session" class="button quiet" type="button" hidden>Cerrar conversación</button>
+      </header>
+
+      <div id="connection-bar" class="connection-bar" role="status" aria-live="polite"><span id="connection-dot" class="status-dot" aria-hidden="true"></span><span id="connection-label">Conectando…</span><button id="reconnect" class="text-button" type="button" hidden>Reconectar</button></div>
+      <div id="notice" class="notice" role="alert" hidden></div>
+      <div id="recovery-actions" class="recovery-actions" hidden><button id="retry-request" class="button quiet" type="button" hidden>Reintentar el mismo envío</button><button id="forget-request" class="text-button" type="button" hidden>Revisé el historial; liberar envío</button></div>
+
+      <section id="welcome" class="welcome" aria-label="Bienvenida">
+        <span class="welcome-mark" aria-hidden="true">✳</span>
+        <p class="eyebrow">CURIOSIDAD ANTES QUE PRODUCTIVIDAD</p>
+        <h2>¿Qué tenés<br>en mente?</h2>
+        <p>Una idea, una duda, algo que quieras entender.<br>Empezá una conversación o retomá tu historial.</p>
+      </section>
+      <section id="messages" class="messages" role="log" aria-label="Mensajes de la conversación" aria-live="polite" hidden></section>
+
+      <div class="composer-wrap">
+        <form id="composer" class="composer">
+          <label class="sr-only" for="message-input">Tu mensaje para Miku</label>
+          <textarea id="message-input" name="message" rows="3" maxlength="8192" autocomplete="off" placeholder="Escribile a Miku…" aria-describedby="composer-hint" disabled></textarea>
+          <div class="composer-bottom"><span id="composer-hint">Ctrl / ⌘ + Enter para enviar</span><button id="send-message" class="button primary" type="submit" disabled>Enviar <span aria-hidden="true">↗</span></button></div>
+        </form>
+        <p class="privacy-note">El historial se guarda. La memoria personal está desactivada en esta web.</p>
+      </div>
+    </main>
+  </div>
+</body>
+</html>
